@@ -4,14 +4,13 @@ const router = express.Router();
 const conexion = require('./database/db');
 
 router.get('/', (req, res)=>{
-    res.render('index.ejs', {var1: 'Esto es una variable'});
-    // conexion.query('select * from users', (error, results)=>{
-    //     if(error){
-    //         throw error;
-    //     }else{
-    //         res.send(results);
-    //     }
-    // });
+    conexion.query('select * from user', (error, results)=>{
+        if(error){
+            throw error;
+        }else{
+            res.render('index.ejs', {results:results});
+        }
+    });
 });
 
 module.exports = router;
