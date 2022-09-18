@@ -52,8 +52,8 @@
                     <td><%= user.user %></td>
                     <td><%= user.rol %></td>
                     <td>
-                        <a href="/edit" class="btn btn-outline-info">editar</a>
-                        <a href="/edit" class="btn btn-outline-danger">borrar</a>
+                        <a href="/edit/<%= user.id %>" class="btn btn-outline-info">editar</a>
+                        <a href="/delete/<%= user.id %>" class="btn btn-outline-danger">borrar</a>
                     </td>
                 </tr>
                 <% }) %>
